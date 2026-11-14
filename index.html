@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard tugas praktikum dan profil Adli Anara Sofian, mahasiswa Sistem Informasi Universitas Tanjungpura." />
+  <title>Adli Anara Sofian | Student Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Beranda Adli">
+        <span class="brand-mark">A.</span>
+        <span>ADLI ANARA SOFIAN</span>
+      </a>
+      <span class="topbar-tag"><span class="status-dot"></span> PERSONAL STUDENT DASHBOARD</span>
+    </header>
+
+    <main>
+      <section class="profile-hero">
+        <div class="profile-copy">
+          <p class="eyebrow">HELLO, WELCOME TO MY SPACE</p>
+          <h1>Keep learning.<br><span>Keep growing.</span></h1>
+          <p class="intro">Ruang pribadi untuk mengenal saya dan mengelola perjalanan tugas perkuliahan.</p>
+          <a class="scroll-link" href="#dashboard">Jelajahi dashboard <span aria-hidden="true">↓</span></a>
+        </div>
+        <aside class="profile-card" aria-label="Profil mahasiswa">
+          <div class="photo-wrap">
+            <img src="profile.jpeg" alt="Foto profil Adli Anara Sofian" class="profile-photo" />
+            <span class="photo-label">A / 2026</span>
+          </div>
+          <div class="profile-info">
+            <p class="profile-kicker">THE PERSON BEHIND THIS PAGE</p>
+            <h2>Adli Anara Sofian</h2>
+            <p class="profile-role">Mahasiswa Sistem Informasi</p>
+            <div class="profile-divider"></div>
+            <dl class="identity-list">
+              <div><dt>NIM</dt><dd>H1101251051</dd></div>
+              <div><dt>Universitas</dt><dd>Universitas Tanjungpura</dd></div>
+              <div><dt>Semester</dt><dd>3</dd></div>
+            </dl>
+            <p class="personal-note">Suka olahraga, terus belajar, dan mencintai Putri <span aria-label="hati">♥</span></p>
+          </div>
+        </aside>
+        <div class="hero-orb orb-one"></div>
+        <div class="hero-orb orb-two"></div>
+      </section>
+
+      <section class="about-strip" aria-label="Tentang saya">
+        <div class="about-heading"><span class="mini-line"></span><span> A LITTLE ABOUT ME</span></div>
+        <p>Saya adalah mahasiswa Sistem Informasi di Universitas Tanjungpura. Saya menyukai olahraga, tertarik untuk terus berkembang, dan percaya bahwa proses kecil yang konsisten dapat membawa kita menuju tujuan besar.</p>
+        <div class="interest-tags"><span>SPORTS</span><span>TECHNOLOGY</span><span>PERSONAL GROWTH</span></div>
+      </section>
+
+      <section id="dashboard" class="dashboard-section">
+        <div class="section-title">
+          <div>
+            <p class="eyebrow">STAY ORGANIZED</p>
+            <h2>Dashboard Tugas</h2>
+            <p class="section-description">Catat pekerjaan, pantau progres, dan selesaikan satu per satu.</p>
+          </div>
+          <span class="semester-chip">SEMESTER 03</span>
+        </div>
+
+        <section class="stats" aria-label="Ringkasan tugas">
+          <article class="stat-card stat-total"><span class="stat-icon">▤</span><span class="stat-label">Total Tugas</span><strong id="total-count">0</strong><small>Seluruh tugas</small></article>
+          <article class="stat-card stat-pending"><span class="stat-icon">◷</span><span class="stat-label">Belum Selesai</span><strong id="pending-count">0</strong><small>Perlu dikerjakan</small></article>
+          <article class="stat-card stat-done"><span class="stat-icon">✓</span><span class="stat-label">Selesai</span><strong id="done-count">0</strong><small>Telah diselesaikan</small></article>
+        </section>
+
+        <div class="content-grid">
+          <section class="panel form-panel" aria-labelledby="form-title">
+            <div class="section-head">
+              <span class="panel-index">01 / INPUT</span>
+              <h3 id="form-title">Tambah Tugas</h3>
+              <p>Masukkan detail tugas baru ke daftar.</p>
+            </div>
+            <form id="task-form">
+              <label for="task-name">Nama tugas</label>
+              <input id="task-name" name="task-name" type="text" maxlength="80" required placeholder="Contoh: Menyelesaikan laporan" />
+              <label for="task-course">Mata kuliah</label>
+              <select id="task-course" name="task-course">
+                <option value="Pemrograman Web Dasar">Pemrograman Web Dasar</option>
+                <option value="Aplikasi Multimedia">Aplikasi Multimedia</option>
+                <option value="Manajemen Proyek SI">Manajemen Proyek SI</option>
+                <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+              <label for="task-date">Tenggat <span>(opsional)</span></label>
+              <input id="task-date" name="task-date" type="date" />
+              <button type="submit" class="primary-btn">+ Tambah ke daftar</button>
+              <p id="form-feedback" class="feedback" role="status" aria-live="polite"></p>
+            </form>
+          </section>
+
+          <section class="panel list-panel" aria-labelledby="list-title">
+            <div class="section-head list-head">
+              <div>
+                <span class="panel-index">02 / OVERVIEW</span>
+                <h3 id="list-title">Daftar Tugas</h3>
+                <p>Atur dan periksa progres pekerjaanmu.</p>
+              </div>
+              <label class="filter-label" for="status-filter">Tampilkan
+                <select id="status-filter">
+                  <option value="semua">Semua</option>
+                  <option value="aktif">Aktif</option>
+                  <option value="selesai">Selesai</option>
+                </select>
+              </label>
+            </div>
+            <div class="progress-info"><span>Progres penyelesaian</span><strong id="progress-text">0%</strong></div>
+            <div class="progress-bar" role="progressbar" aria-label="Persentase tugas selesai" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><span id="progress-fill"></span></div>
+            <ul id="task-list" class="task-list" aria-live="polite"></ul>
+            <p id="empty-message" class="empty-message" hidden>Belum ada tugas pada kategori ini.</p>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="footer-mark">A.</span>
+      <p>Designed for learning, built with consistency.</p>
+      <small>© 2026 Adli Anara Sofian · HTML · CSS · JavaScript</small>
+    </footer>
+  </div>
+</body>
+</html>
